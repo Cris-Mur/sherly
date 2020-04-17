@@ -1,0 +1,12 @@
+#ifndef _SHERLY_H_
+#define _SHERLY_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#endif /*_SHERLY_H_*/
