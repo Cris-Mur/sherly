@@ -1,0 +1,18 @@
+################# Help #################
+########################################
+
+[USAGE] sherly [parameter]
+
+* --help       print help
+
+Cris-Mur Sherly-linux
+www.github.com/user/Cris-Mur/
+
+sherly is a shell program like sh, bash
+following linux programming guides, and
+cause this proyect is interesting...
+Thaks for consulting  ヽ(*・ω・)ﾉ
+(⌒ω⌒) (✧ω✧) ٩(｡•́‿•̀｡)۶ (*´∀`*)ﾎｹｪ
+
+########################################
+########################################
