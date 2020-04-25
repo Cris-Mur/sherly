@@ -1,9 +1,17 @@
-################# Help #################
-########################################
+################## Help ##################
+##########################################
 
 [USAGE] sherly [parameter]
 
 * --help       print help
+* -v	       print version of the sherly
+
+Basics commands
+
+* printenv	print enviroment variables
+* help		print help
+* exit		exit the program
+* version	print version
 
 Cris-Mur Sherly-linux
 www.github.com/user/Cris-Mur/
@@ -14,5 +22,5 @@ cause this proyect is interesting...
 Thaks for consulting  ヽ(*・ω・)ﾉ
 (⌒ω⌒) (✧ω✧) ٩(｡•́‿•̀｡)۶ (*´∀`*)ﾎｹｪ
 
-########################################
-########################################
+#########################################
+#########################################
