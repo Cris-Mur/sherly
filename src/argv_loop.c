@@ -12,12 +12,12 @@ void cmdlp(char **cmd)
 
 	while (*(s + cmd))
 	{
-		if (strcmp(*(s + cmd), "--help") == 0)
+		if (strcmp(*(s + cmd), "--help") == 0 || strcmp(*(s + cmd), "-h") == 0)
 		{
 			prntfl("rsrc/help");
 			exit(0);
 		}
-		if (strcmp(*(s + cmd), "-v") == 0)
+		if (strcmp(*(s + cmd), "-v") == 0 || strcmp(*(s + cmd), "-version") == 0)
 		{
 			prntfl("rsrc/version");
 			exit(0);

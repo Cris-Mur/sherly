@@ -41,13 +41,14 @@ int main(int argc, char **argv)
 		if (buff[0] != 10)
 		{
 			buff = strndup(buff, (buflen(buff) - 1));
+			cmmd(buff);
 		}
 
 		if (!buff)
 			break;
-		cmmd(buff);
 
 		x++;
 	}
+	write(STDOUT_FILENO, "adios... ;)\n", 13);
 	return (0);
 }

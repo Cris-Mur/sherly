@@ -9,33 +9,44 @@
 void cmmd(char *buff)
 {
 	char **cmd = NULL;
-	int x = 0;
+	pid_t children;
+	/*int x = 0;*/
 
 	if (buff)
 	{
-	        if (strcmp(buff, "help") == 0)
+		if (!buff || strcmp(buff, "exit") == 0)
 		{
-			prntfl("rsrc/help.txt");
+			write(STDOUT_FILENO, "bye...\n", 7);
+			exit(0);
+		}
+	    if (strcmp(buff, "help") == 0)
+		{
+			prntfl("rsrc/help");
+			return;
 		}
 		if (strcmp(buff, "version") == 0)
 		{
 			write(STDOUT_FILENO, ".1\n", 3);
+			return;
 		}
 		if (buff)
 		{
 			cmd = mkcmd(buff);
-			while (*(x + cmd))
+			children = fork();
+			if (children == 0)
 			{
-				write(STDOUT_FILENO, cmd[x], buflen(cmd[x]));
-				write(1, "\n", 1);
-				x++;
+				if (execve(cmd[0], cmd, environ) == -1)
+				{
+					write(STDERR_FILENO, "Uy papi algo salio mal :(\n", 27);
+					exit(1);
+				}
+
 			}
-			free(cmd);
+			else
+			{
+				wait(&children);
+				free(cmd);
+			}
 		}
-	}
-	if (!buff || strcmp(buff, "exit") == 0)
-	{
-		write(STDOUT_FILENO, "bye...\n", 7);
-		exit(0);
 	}
 }

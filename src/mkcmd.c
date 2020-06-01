@@ -37,17 +37,24 @@ char **mkcmd(char *cmd)
 	size_t nwrd = 0, x;
 	nwrd = cwrd(cmd);
 
-	vec = (char **)malloc(sizeof(char *) * nwrd);
+	vec = (char **)malloc(sizeof(char *) * (nwrd + 1));
 
 	buff = strtok(str, " ");
 
 	x = 0;
-	while (x <= nwrd)
+	while (x <= nwrd && buff)
 	{
-		*(x + vec) = strdup(buff);
-		buff = strtok(NULL, " ");
+		if (buff[0] == '"')
+		{
+			*(x + vec) = strdup(buff + 1);
+			buff = strtok(NULL, "\"");
+		}
+		else
+		{
+			*(x + vec) = strdup(buff);
+			buff = strtok(NULL, " ");
+		}
 		x++;
 	}
-
 	return (vec);
 }
